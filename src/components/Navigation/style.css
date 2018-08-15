@@ -1,0 +1,74 @@
+.nav {
+  width: 326px;
+  height: 100%;
+  background-color: rgba(18%, 9%, 20%, 0.7);
+  position: relative;
+}
+
+.avatarWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 123px;
+  padding-bottom: 35px;
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  width: 100%;
+  padding: 30px 75px;
+  color: #ffffff;
+  font-family: "Proxima Nova";
+  font-size: 32px;
+  font-weight: 300;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  text-decoration: none;
+}
+
+.navItem.active {
+  color: #ff4ba8;
+}
+
+.navItem.active:before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 65px;
+  background-color: #ff4ba8;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -32.5px;
+}
+
+.social {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.social i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.social i:hover {
+  color: #ff4ba8;
+}
