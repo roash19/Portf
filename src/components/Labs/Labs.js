@@ -5,7 +5,7 @@ import labs from '../../data/labs';
 
 class Labs extends Component {
   renderLabs = () => {
-    const labsList = labs.map(item => <OneLab key={item.id} image={item.image} title={item.title} text={item.text}/>)
+    const labsList = labs.map(item => <OneLab key={item.id} image={item.image} title={item.title} text={item.text} id={item.id}/>)
     return labsList
   };
 

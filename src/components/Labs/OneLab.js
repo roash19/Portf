@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './style.css';
 
 const OneLab = (props) => {
-  const {image, title, text} = props;
+  const {image, title, text, id} = props;
   return (
     <div className={styles.oneLab}>
       <div className={styles.imgWrapper}>
@@ -13,7 +14,7 @@ const OneLab = (props) => {
         <p className={styles.titleLab}>{title}</p>
         <p className={styles.text}>{text}</p>
 
-        <a className={styles.link} href="">check now &raquo;</a>
+        <Link className={styles.link} to={`/labs/${id}`}>check now &raquo;</Link>
       </div>
 
     </div>

@@ -35,6 +35,23 @@
   border: none;
 }
 
+.input {
+  width: 250px;
+  height: 40px;
+  margin-left: 55px;
+  padding: 20px;
+  border: 2px solid #bbb8be;
+  border-radius: 25px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #bbb8be;
+  font-family: "Proxima Nova";
+  font-size: 26px;
+  font-weight: 400;
+  background-color: transparent;
+}
+
 .alignCenter {
   display: flex;
   align-items: center;
@@ -55,11 +72,22 @@
 .work {
   width: 312px;
   height: 234px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.work:hover img {
+  transform: scale(1.2);
 }
 
 .work img {
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .workName {
@@ -68,4 +96,11 @@
   font-size: 26px;
   font-weight: 300;
   margin-top: 25px;
+}
+
+.notFounded {
+  color: #ffffff;
+  font-family: "Proxima Nova";
+  font-size: 20px;
+  font-weight: 300;
 }

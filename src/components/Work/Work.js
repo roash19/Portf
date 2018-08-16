@@ -4,6 +4,44 @@ import works from '../../data/works';
 import OneWork from './OneWork';
 
 class Work extends Component {
+  state = {
+    works: works,
+    filtered: [],
+    value: '',
+    showInput: false
+  };
+
+  renderWorks = () => {
+    const {filtered, works, value} = this.state;
+
+    if (filtered.length > 0) {
+      return filtered.map(item => <OneWork key={item.id} image={item.image} name={item.text}/>);
+    } else if (filtered.length === 0 && value === '') {
+      return works.map(item => <OneWork key={item.id} image={item.image} name={item.text}/>);
+    } else {
+      return <p className={styles.notFounded}>Not Founded</p>
+    }
+
+  };
+
+  handleChange = (event) => {
+    const value = event.target.value;
+
+    const filtered = this.state.works.filter(item =>
+      item.text.toLowerCase().indexOf(value.toLowerCase()) > -1);
+
+    this.setState({
+      value,
+      filtered
+    })
+  };
+
+  toggleSearch = () => {
+    this.setState({
+      showInput: !this.state.showInput
+    })
+  };
+
   render() {
     return (
       <div className={styles.container}>
@@ -15,12 +53,20 @@ class Work extends Component {
 
           <div className={styles.alignCenter}>
             <button className={styles.share}></button>
-            <button className={styles.search}></button>
+            <button className={styles.search} onClick={this.toggleSearch}></button>
+            {
+              this.state.showInput &&
+              <input type="text"
+                     autoFocus="true"
+                     className={styles.input}
+                     onChange={this.handleChange}
+                     value={this.state.value}/>
+            }
           </div>
         </header>
 
         <div className={styles.works}>
-          {renderWorks()}
+          {this.renderWorks()}
         </div>
 
       </div>
@@ -28,9 +74,5 @@ class Work extends Component {
   }
 }
 
-const renderWorks = () => {
-  const workList = works.map(item => <OneWork key={item.id} image={item.image} name={item.text}/>)
-  return workList;
-};
 
 export default Work;

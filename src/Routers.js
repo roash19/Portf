@@ -7,6 +7,7 @@ import Work from "./components/Work/Work";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import Labs from "./components/Labs/Labs";
+import Lab from "./components/Labs/Lab";
 
 class Routers extends Component {
   render() {
@@ -18,9 +19,10 @@ class Routers extends Component {
           <div className={styles.main}>
             <Switch>
               <Route exact path="/" component={About}/>
-              <Route path="/work" component={Work}/>
-              <Route path="/labs" component={Labs}/>
-              <Route path="/contact" component={Contact}/>
+              <Route exact path="/work" component={Work}/>
+              <Route exact path="/labs" component={Labs}/>
+              <Route exact path="/contact" component={Contact}/>
+              <Route path="/labs/:id" component={Lab}/>
               <Redirect to="/"/>
             </Switch>
           </div>
