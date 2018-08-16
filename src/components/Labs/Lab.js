@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
+import styles from '../../index.css';
 import labs from '../../data/labs';
 
 class Lab extends Component {
   render() {
     const lab = labs.filter(item => item.id === +this.props.match.params.id);
     return (
-      <div style={{padding: '80px'}}>
+      <div className={styles.container}>
         <h1 style={{color: 'white', fontSize: '30px', marginBottom: '80px'}}>Section {lab[0].title}</h1>
-        <img style={{width: '500px', height: '400px', marginBottom: '30px'}} src={lab[0].image} alt=""/>
+        <img style={{width: '500px', height: 'auto', minHeight: '220px', marginBottom: '30px'}} src={lab[0].image} alt=""/>
 
         <p style={{color: 'white', fontSize: '20px', marginBottom: '15px'}}>{lab[0].text}</p>
         <p style={{color: 'white', fontSize: '20px'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.

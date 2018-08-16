@@ -1,9 +1,5 @@
 .container {
-  composes: container from '../About/style.css';
-  padding-top: 50px;
-  padding-bottom: 50px;
-  width: calc(100% + 25px);
-  overflow-y: scroll;
+  composes: container from '../../index.css';
 }
 
 .title {
@@ -74,4 +70,25 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 515px) {
+  .labs {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+
+  .oneLab {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .imgWrapper {
+    height: auto;
+  }
+
+  .imgWrapper img {
+    width: 100%;
+    height: auto;
+  }
 }

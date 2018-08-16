@@ -1,6 +1,5 @@
 .container {
-  composes: container from '../About/style.css';
-  padding-top: 100px;
+  composes: container from '../../index.css';
 }
 
 .title {
@@ -14,7 +13,7 @@
 }
 
 .form {
-  width: 997px;
+  max-width: 997px;
   margin-top: 50px;
 }
 
@@ -76,4 +75,22 @@
   font-weight: 300;
   margin-top: 25px;
   border: none;
+}
+
+@media screen and (max-width: 1455px) {
+  .input {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .submit {
+    width: 100%;
+  }
 }

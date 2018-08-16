@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styles from './index.css';
 import {BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import Navigation from './components/Navigation/Navigation';
+import MenuNav from './components/Navigation/MenuNav';
 import Work from "./components/Work/Work";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
@@ -13,10 +13,10 @@ class Routers extends Component {
   render() {
     return (
       <Router>
-        <div className={styles.container}>
-          <Navigation/>
+        <div className={styles.outerContainer} id="outer-container">
+          <MenuNav/>
 
-          <div className={styles.main}>
+          <div className={styles.main} id="page-wrap">
             <Switch>
               <Route exact path="/" component={About}/>
               <Route exact path="/work" component={Work}/>

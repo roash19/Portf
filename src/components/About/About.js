@@ -20,7 +20,7 @@ class About extends Component {
           to code in <span>Laravel</span> and <span>Ruby</span>
         </p>
 
-        <div>
+        <div className={styles.buttonsWrapper}>
           <button className={styles.button}>Hire me</button>
           <button className={styles.button}>Know more</button>
         </div>

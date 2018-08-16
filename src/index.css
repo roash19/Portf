@@ -99,10 +99,20 @@ input:active, textarea:active {
   background-size: cover;
 }
 
-.container {
+.outerContainer {
   width: 100%;
   height: 100%;
   display: flex;
+}
+
+.container {
+  width: calc(100% + 25px);
+  height: 100%;
+  padding: 123px 80px 20px 80px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 .main {
@@ -110,4 +120,66 @@ input:active, textarea:active {
   height: 100%;
   background-color: rgba(4%, 7%, 14%, 0.7);
   overflow: hidden;
+}
+
+:global(.bm-burger-button) {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+:global(.bm-cross-button) {
+  height: 18px !important;
+  width: 18px !important;
+  right: 10px !important;
+  top: 16px !important;
+}
+
+@media screen and (max-width: 1150px) {
+  .main {
+    width: 100%;
+  }
+
+  .container {
+    padding: 123px 36px 20px 36px;
+    overflow: auto;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .main {
+    width: 100%;
+  }
+
+  .container {
+    padding: 123px 36px 20px 36px;
+    width: 100%;
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 123px 15px 20px 15px;
+  }
+
+  :global(.bm-burger-button) {
+    left: 15px;
+    top: 15px;
+  }
+
+  :global(.bm-burger-button:before) {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(4%, 7%, 14%, 0.9);
+  }
 }

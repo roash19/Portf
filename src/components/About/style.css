@@ -1,12 +1,5 @@
 .container {
-  width: 100%;
-  height: 100%;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 123px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  composes: container from '../../index.css';
 }
 
 .title {
@@ -74,4 +67,45 @@
 
 .button:hover {
   background-color: #ff4ba8;
+}
+
+@media screen and (max-width: 540px) {
+  .buttonsWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button {
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .subtitle {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 26px;
+    line-height: 42px;
+  }
+
+  .button {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button {
+    width: 100%;
+  }
+
+  .buttonsWrapper {
+    flex-wrap: wrap;
+  }
+
+  .button:first-child {
+    margin-bottom: 15px !important;
+  }
 }
